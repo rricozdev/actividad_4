@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estadísticas Refactorizadas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Resultados Estadísticos</h1>
+    <pre id="resultados">Cargando datos...</pre>
+  </div>
+
+  <script type="module">
+    import { obtenerEstadisticas } from './refactorizacion.fuente.js';
+
+    const principal = () => {
+      const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const { media, mediana, desviacionEstandar } = obtenerEstadisticas(numeros);
+
+      document.getElementById('resultados').textContent = `
+Media: ${media}
+Mediana: ${mediana}
+Desviación estándar: ${desviacionEstandar}
+`;
+    };
+
+    principal();
+  </script>
+</body>
+</html>
